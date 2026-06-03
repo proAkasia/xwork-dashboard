@@ -1,0 +1,32 @@
+name: Generate Commit RSS Feed
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate RSS feed from commits
+        uses: atsushifx/commit2feed@v1.2.1
+        with:
+          target_branch: 'main'
+          feed_output_path: 'feed/commits.xml'
+          feed_title: 'xwork-dashboard - Commit Logs'
+          feed_description: 'Update kode terbaru dari xwork-dashboard'
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update RSS feed with latest commits"
+          file_pattern: 'feed/*.xml'
