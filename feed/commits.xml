@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>xwork-dashboard - Commit Logs</title>
+<link>https://github.com/proAkasia/xwork-dashboard</link>
+<description>Update kode terbaru dari xwork-dashboard</description>
+<atom:link href="https://raw.githubusercontent.com/proAkasia/xwork-dashboard/main/feed/commits.xml" rel="self" type="application/rss+xml"/>
+<item><title>Revise RSS feed generation for commit logs</title><link>https://github.com/proAkasia/xwork-dashboard/commit/078b9c66bb525e6884d45177cd52fcd860e9352a</link><guid>078b9c66bb525e6884d45177cd52fcd860e9352a</guid><pubDate>Wed, 3 Jun 2026 22:57:23 +0700</pubDate><description><![CDATA[Revise RSS feed generation for commit logs]]></description></item>
+<item><title>Add GitHub Actions workflow for RSS commit feed</title><link>https://github.com/proAkasia/xwork-dashboard/commit/ffce1e8fd5c27e992e7b4f7c90e20aa0fee71989</link><guid>ffce1e8fd5c27e992e7b4f7c90e20aa0fee71989</guid><pubDate>Wed, 3 Jun 2026 22:53:07 +0700</pubDate><description><![CDATA[Add GitHub Actions workflow for RSS commit feed]]></description></item>
+<item><title>Add workflow to clean up old deployments</title><link>https://github.com/proAkasia/xwork-dashboard/commit/cf8194dc6c2a686527a6aa7cd105ffb6613ee83b</link><guid>cf8194dc6c2a686527a6aa7cd105ffb6613ee83b</guid><pubDate>Wed, 3 Jun 2026 12:44:46 +0700</pubDate><description><![CDATA[Add workflow to clean up old deployments]]></description></item>
+<item><title>Add auto-cleanup workflow bro</title><link>https://github.com/proAkasia/xwork-dashboard/commit/98b5485ebf05b651f1d1237885d8cace8d443fc6</link><guid>98b5485ebf05b651f1d1237885d8cace8d443fc6</guid><pubDate>Wed, 3 Jun 2026 12:20:42 +0700</pubDate><description><![CDATA[Add auto-cleanup workflow bro]]></description></item>
+<item><title>Initial commit</title><link>https://github.com/proAkasia/xwork-dashboard/commit/8bfd599fe3694ad0b3733e0ca82af7660cf07ca8</link><guid>8bfd599fe3694ad0b3733e0ca82af7660cf07ca8</guid><pubDate>Thu, 28 May 2026 21:20:34 +0700</pubDate><description><![CDATA[Initial commit]]></description></item></channel>
+</rss>
