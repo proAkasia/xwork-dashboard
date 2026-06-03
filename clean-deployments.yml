@@ -1,0 +1,20 @@
+﻿name: Clean up old deployments
+
+on:
+  pull_request:
+    types: [closed]
+  delete:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+    steps:
+      - name: Delete deployment
+        uses: strumwolf/delete-deployment-environment@v2.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: ${{ github.event.pull_request.number || github.event.ref }}
+          onlyRemoveDeployments: true
