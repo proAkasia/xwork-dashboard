@@ -18,12 +18,21 @@ jobs:
           fetch-depth: 0
 
       - name: Generate RSS feed from commits
-        uses: atsushifx/commit2feed@v1.2.1
-        with:
-          target_branch: 'main'
-          feed_output_path: 'feed/commits.xml'
-          feed_title: 'xwork-dashboard - Commit Logs'
-          feed_description: 'Update kode terbaru dari xwork-dashboard'
+        run: |
+          mkdir -p feed
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > feed/commits.xml
+          echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">' >> feed/commits.xml
+          echo '<channel>' >> feed/commits.xml
+          echo '<title>xwork-dashboard - Commit Logs</title>' >> feed/commits.xml
+          echo '<link>https://github.com/proAkasia/xwork-dashboard</link>' >> feed/commits.xml
+          echo '<description>Update kode terbaru dari xwork-dashboard</description>' >> feed/commits.xml
+          echo '<atom:link href="https://raw.githubusercontent.com/proAkasia/xwork-dashboard/main/feed/commits.xml" rel="self" type="application/rss+xml"/>' >> feed/commits.xml
+          
+          # Ambil 10 komit terakhir
+          git log -10 --pretty=format:'<item><title>%s</title><link>https://github.com/proAkasia/xwork-dashboard/commit/%H</link><guid>%H</guid><pubDate>%aD</pubDate><description><![CDATA[%s]]></description></item>' >> feed/commits.xml
+          
+          echo '</channel>' >> feed/commits.xml
+          echo '</rss>' >> feed/commits.xml
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
